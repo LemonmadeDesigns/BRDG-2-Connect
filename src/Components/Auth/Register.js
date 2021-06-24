@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import firebase from "../../firebase";
-import md5 from 'md5'
+import md5 from "md5";
 
 import {
   Grid,
@@ -21,7 +21,7 @@ class Register extends React.Component {
     passwordConfirmation: "",
     errors: [],
     loading: false,
-    
+    usersRef: firebase.database().ref("users")
   };
 
   isFormValid = () => {
@@ -29,44 +29,39 @@ class Register extends React.Component {
     let error;
 
     if (this.isFormEmpty(this.state)) {
-      // throw error
-      error = { message: 'Fill in all the fields' };
-      this.setState({ errors: errors.concat(error) })
+      error = { message: "Fill in all fields" };
+      this.setState({ errors: errors.concat(error) });
       return false;
     } else if (!this.isPasswordValid(this.state)) {
-      // throw error
-      error = { message: 'Password is invalid' };
-      this.setState({ errors: errors.concat(error) })
+      error = { message: "Password is invalid" };
+      this.setState({ errors: errors.concat(error) });
       return false;
     } else {
-      // form valid
-      return true
+      return true;
     }
-  }
+  };
 
   isFormEmpty = ({ username, email, password, passwordConfirmation }) => {
     return (
-      !username.length || 
-      !email.length    || 
-      !password.length || 
+      !username.length ||
+      !email.length    ||
+      !password.length ||
       !passwordConfirmation.length
     );
-  }
+  };
 
   isPasswordValid = ({ password, passwordConfirmation }) => {
     if (password.length < 6 || passwordConfirmation.length < 6) {
       return false;
-     } else if (password !== passwordConfirmation) {
-      // throw error
-      return false
+    } else if (password !== passwordConfirmation) {
+      return false;
     } else {
-      // form valid
-      return true
+      return true;
     }
-  }
+  };
 
-  displayErrors = errors => 
-    errors.map((error, i) => <p key={i}>{error.message}</p>)
+  displayErrors = errors =>
+    errors.map((error, i) => <p key={i}>{error.message}</p>);
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -139,7 +134,7 @@ class Register extends React.Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h2" icon color="purple" textAlign="center">
             <Icon name="puzzle piece" color="purple" />
-            Register for BRDG Chat App
+            Register for DevChat
           </Header>
           <Form onSubmit={this.handleSubmit} size="large">
             <Segment stacked>
@@ -190,12 +185,12 @@ class Register extends React.Component {
                 type="password"
               />
 
-              <Button 
+              <Button
                 disabled={loading}
-                className={ loading ? "loading" : "" }
+                className={loading ? "loading" : ""}
                 color="purple"
+                fluid
                 size="large"
-                fluid 
               >
                 Submit
               </Button>
