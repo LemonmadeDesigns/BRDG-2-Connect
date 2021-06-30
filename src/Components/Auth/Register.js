@@ -132,8 +132,8 @@ class Register extends React.Component {
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" icon color="purple" textAlign="center">
-            <Icon name="puzzle piece" color="purple" />
+          <Header as="h2" icon color="violet" textAlign="center">
+            <Icon name="puzzle piece" color="violet" />
             Register for DevChat
           </Header>
           <Form onSubmit={this.handleSubmit} size="large">
@@ -188,7 +188,7 @@ class Register extends React.Component {
               <Button
                 disabled={loading}
                 className={loading ? "loading" : ""}
-                color="purple"
+                color="violet"
                 fluid
                 size="large"
               >
