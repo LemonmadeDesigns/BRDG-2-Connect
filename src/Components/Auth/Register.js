@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import firebase from "../../firebase";
 import md5 from "md5";
-
 import {
   Grid,
   Form,
@@ -12,6 +10,7 @@ import {
   Message,
   Icon
 } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class Register extends React.Component {
   state = {
@@ -44,7 +43,7 @@ class Register extends React.Component {
   isFormEmpty = ({ username, email, password, passwordConfirmation }) => {
     return (
       !username.length ||
-      !email.length    ||
+      !email.length ||
       !password.length ||
       !passwordConfirmation.length
     );
@@ -132,8 +131,8 @@ class Register extends React.Component {
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" icon color="violet" textAlign="center">
-            <Icon name="puzzle piece" color="violet" />
+          <Header as="h1" icon color="orange" textAlign="center">
+            <Icon name="puzzle piece" color="orange" />
             Register for DevChat
           </Header>
           <Form onSubmit={this.handleSubmit} size="large">
@@ -188,7 +187,7 @@ class Register extends React.Component {
               <Button
                 disabled={loading}
                 className={loading ? "loading" : ""}
-                color="violet"
+                color="orange"
                 fluid
                 size="large"
               >
