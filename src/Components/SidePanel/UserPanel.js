@@ -43,7 +43,7 @@ class UserPanel extends React.Component {
 					<Grid.Row style={{ padding: "1.2em", margin: 0 }}>
 						{/* App Header */}
 						<Header inverted floated="left" as="h2">
-							{/* <Icon name="code" /> */}
+							<Icon name="code" />
 							<Header.Content>BRDG Chat</Header.Content>
 						</Header>
 
