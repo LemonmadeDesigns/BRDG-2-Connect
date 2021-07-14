@@ -8,13 +8,15 @@ import Message from "./Message";
 
 class Messages extends React.Component {
 	state = {
+		privateChannel: this.props.isPrivateChannel,
+		privateMessagesRef: firebase.database().ref("privateMessages"),
 		messagesRef: firebase.database().ref("messages"),
 		messages: [],
 		messagesLoading: true,
 		channel: this.props.currentChannel,
 		user: this.props.currentUser,
-		numUniqueUsers: '',
-		searchTerm: '',
+		numUniqueUsers: "",
+		searchTerm: "",
 		searchLoading: false,
 		searchResults: [],
 	};
@@ -33,7 +35,8 @@ class Messages extends React.Component {
 
 	addMessageListener = (channelId) => {
 		let loadedMessages = [];
-		this.state.messagesRef.child(channelId).on("child_added", (snap) => {
+		const ref = this.getMessagesRef();
+		ref.child(channelId).on("child_added", (snap) => {
 			loadedMessages.push(snap.val());
 			this.setState({
 				messages: loadedMessages,
@@ -41,6 +44,11 @@ class Messages extends React.Component {
 			});
 			this.countUniqueUsers(loadedMessages);
 		});
+	};
+
+	getMessagesRef = () => {
+		const { messagesRef, privateMessagesRef, privateChannel } = this.state;
+		return privateChannel ? privateMessagesRef : messagesRef;
 	};
 
 	handleSearchChange = (event) => {
@@ -77,7 +85,7 @@ class Messages extends React.Component {
 			return acc;
 		}, []);
 		const plural = uniqueUsers.length > 1 || uniqueUsers.length === 0;
-		const numUniqueUsers = `${uniqueUsers.length} user${plural ? "s" : ''}`;
+		const numUniqueUsers = `${uniqueUsers.length} user${plural ? "s" : ""}`;
 		this.setState({ numUniqueUsers });
 	};
 
@@ -91,20 +99,15 @@ class Messages extends React.Component {
 			/>
 		));
 
-	displayChannelName = (channel) => (channel ? `#${channel.name}` : '');
+	displayChannelName = (channel) => {
+		return channel
+			? `${this.state.privateChannel ? "@" : "#"}${channel.name}`
+			: "";
+	};
 
 	render() {
 		// prettier-ignore
-		const { 
-      messagesRef, 
-      messages, 
-      channel, 
-      user, 
-      numUniqueUsers, 
-      searchTerm, 
-      searchResults, 
-      searchLoading 
-    } = this.state;
+		const { messagesRef, messages, channel, user, numUniqueUsers, searchTerm, searchResults, searchLoading, privateChannel } = this.state;
 
 		return (
 			<React.Fragment>
@@ -113,6 +116,7 @@ class Messages extends React.Component {
 					numUniqueUsers={numUniqueUsers}
 					handleSearchChange={this.handleSearchChange}
 					searchLoading={searchLoading}
+					isPrivateChannel={privateChannel}
 				/>
 
 				<Segment>
@@ -127,6 +131,8 @@ class Messages extends React.Component {
 					messagesRef={messagesRef}
 					currentChannel={channel}
 					currentUser={user}
+					isPrivateChannel={privateChannel}
+					getMessagesRef={this.getMessagesRef}
 				/>
 			</React.Fragment>
 		);
