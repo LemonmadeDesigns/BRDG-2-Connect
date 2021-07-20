@@ -11,13 +11,6 @@ body,
   padding-bottom: 2em;
 }
 
-/* ColorPanel.js */
-body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content > div:nth-child(1),
-body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content > div:nth-child(3),
-.slider-picker {
-    margin-bottom: 1em;
-}
-
 /* Messages.js */
 .messages {
   height: 62vh;
@@ -47,4 +40,24 @@ body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content >
 /* ProgressBar.js */
 .progress__bar {
   margin: 0.3em 0 0 0 !important;
+}
+
+/* ColorPanel.js */
+.color__container {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 35px;
+  border-radius: 3px;
+}
+
+.color__square {
+  width: 35px;
+  height: 35px;
+}
+
+.color__overlay {
+  width: 85px;
+  height: 35px;
+  transform: rotate(225deg);
 }
