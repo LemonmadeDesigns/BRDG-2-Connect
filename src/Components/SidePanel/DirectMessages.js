@@ -6,6 +6,7 @@ import { Menu, Icon } from "semantic-ui-react";
 
 class DirectMessages extends React.Component {
 	state = {
+		activeChannel: "",
 		user: this.props.currentUser,
 		users: [],
 		usersRef: firebase.database().ref("users"),
@@ -18,6 +19,16 @@ class DirectMessages extends React.Component {
 			this.addListeners(this.state.user.uid);
 		}
 	}
+
+	componentWillUnmount() {
+		this.removeListeners();
+	}
+
+	removeListeners = () => {
+		this.state.usersRef.off();
+		this.state.presenceRef.off();
+		this.state.connectedRef.off();
+	};
 
 	addListeners = (currentUserUid) => {
 		let loadedUsers = [];
@@ -120,7 +131,6 @@ class DirectMessages extends React.Component {
 	}
 }
 
-export default connect(
-  null,
-  { setCurrentChannel, setPrivateChannel }
-)(DirectMessages);
+export default connect(null, { setCurrentChannel, setPrivateChannel })(
+	DirectMessages
+);
