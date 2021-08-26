@@ -99,7 +99,7 @@ class ColorPanel extends React.Component {
 				width="very thin"
 			>
 				<Divider />
-				<Button icon="add" size="small" color="blue" onClick={this.openModal} />
+				<Button icon="add" size="small" color="blue" onClick={this.openModal} /> CREATE COLOR SCHEME
 				{this.displayUserColors(userColors)}
 
 				{/* Color Picker Modal */}

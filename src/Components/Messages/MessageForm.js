@@ -15,9 +15,9 @@ class MessageForm extends React.Component {
 		storageRef: firebase.storage().ref(),
 		typingRef: firebase.database().ref("typing"),
 		uploadTask: null,
-		uploadState: "",
+		uploadState: '',
 		percentUploaded: 0,
-		message: "",
+		message: '',
 		channel: this.props.currentChannel,
 		user: this.props.currentUser,
 		loading: false,
@@ -42,7 +42,9 @@ class MessageForm extends React.Component {
 	};
 
 	handleKeyDown = (event) => {
-		if (event.ctrlKey && event.keyCode === 13) {
+		if (event.keyCode === 13 && event.shiftKey) {
+			this.sendMessage();
+		} else if (event.keyCode === 13) {
 			this.sendMessage();
 		}
 

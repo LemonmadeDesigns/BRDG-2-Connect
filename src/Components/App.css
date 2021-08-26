@@ -17,7 +17,7 @@ body,
   overflow-y: scroll;
 }
 
-/* MessageForm.js */
+/* MessageForm.js
 .message__form {
   position: fixed !important;
   bottom: 1em;
@@ -25,7 +25,7 @@ body,
   left: 0;
   right: 1em;
   z-index: 200;
-}
+} */
 
 .emoijpicker {
   position: absolute;

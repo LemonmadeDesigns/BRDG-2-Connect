@@ -4,7 +4,7 @@ import App from "./Components/App";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import Spinner from "./Spinner";
-import registerServiceWorker from "./registerServiceWorker";
+
 import firebase from "./firebase";
 
 import "semantic-ui-css/semantic.min.css";
@@ -28,7 +28,7 @@ class Root extends React.Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        // console.log(user);
+        console.log(user);
         this.props.setUser(user);
         this.props.history.push("/");
       } else {
@@ -70,4 +70,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-registerServiceWorker();
+// registerServiceWorker();

@@ -118,10 +118,12 @@ class Messages extends React.Component {
 	};
 
 	addMessageListener = (channelId) => {
+		// debugger;
 		let loadedMessages = [];
 		const ref = this.getMessagesRef();
 		ref.child(channelId).on("child_added", (snap) => {
 			loadedMessages.push(snap.val());
+
 			this.setState({
 				messages: loadedMessages,
 				messagesLoading: false,
@@ -162,17 +164,24 @@ class Messages extends React.Component {
 
 	starChannel = () => {
 		if (this.state.isChannelStarred) {
-			this.state.usersRef.child(`${this.state.user.uid}/starred`).update({
-				[this.state.channel.id]: {
-					name: this.state.channel.name,
-					details: this.state.channel.details,
-					createdBy: {
-						name: this.state.channel.createdBy.name,
-						avatar: this.state.channel.createdBy.avatar,
+			console.log("Is Starred");
+			console.table(this.state);
+			this.state.usersRef
+				.child(`${this.state.user.uid}/starred`)
+				.update({
+					[this.state.channel.id]: {
+						name: this.state.channel.name,
+						details: this.state.channel.details,
+						createdBy: {
+							name: this.state.channel.createdBy.name,
+							avatar: this.state.channel.createdBy.avatar,
+						},
 					},
-				},
-			});
+				})
+				.then((r) => console.table(r));
 		} else {
+			console.log("Is Not Starred");
+			console.table(this.state);
 			this.state.usersRef
 				.child(`${this.state.user.uid}/starred`)
 				.child(this.state.channel.id)
@@ -265,13 +274,13 @@ class Messages extends React.Component {
 		));
 
 	displayMessageSkeleton = (loading) =>
-		loading ? (
+		loading ?? (
 			<React.Fragment>
 				{[...Array(10)].map((_, i) => (
 					<Skeleton key={i} />
 				))}
 			</React.Fragment>
-		) : null;
+		);
 
 	render() {
 		// prettier-ignore
@@ -292,6 +301,7 @@ class Messages extends React.Component {
 				<Segment>
 					<Comment.Group className="messages">
 						{this.displayMessageSkeleton(messagesLoading)}
+
 						{searchTerm
 							? this.displayMessages(searchResults)
 							: this.displayMessages(messages)}

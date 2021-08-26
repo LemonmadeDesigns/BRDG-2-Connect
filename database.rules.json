@@ -2,6 +2,7 @@
   "rules": {
     "channels": {
       ".read": "auth != null",
+      ".write": "auth != null",
       "$channelId": {
         ".write": "auth != null",
         ".validate": "newData.hasChildren(['id', 'name', 'createdBy', 'details'])",
@@ -65,6 +66,7 @@
     },
     "users": {
       ".read": "auth != null",
+      ".write": "auth != null",
       "$uid": {
         ".write": "auth != null && auth.uid === $uid",
         ".validate": "newData.hasChildren(['name', 'avatar'])",
