@@ -2,6 +2,7 @@
   "name": "brdg2connect",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "emoji-mart": "^3.0.0",
     "firebase": "^8.7.1",

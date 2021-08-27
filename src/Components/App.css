@@ -53,6 +53,7 @@ body,
   overflow: hidden;
   width: 35px;
   border-radius: 3px;
+  margin: auto !important;
 }
 
 .color__square {
