@@ -51,7 +51,7 @@ p > span {
 	> div:nth-child(1)
 	> div.ui.large.inverted.vertical.left.fixed.menu {
 	position: relative !important;
-	width: 80% !important;
+	/* width: 80% !important; */
 	left: 20% !important;
 	height: 100% !important;
 	top: 0% !important;

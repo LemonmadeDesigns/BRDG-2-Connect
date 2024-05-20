@@ -3,10 +3,10 @@
 }
 
 .ui.inverted.menu {
-  border: 0 solid transparent;
+  border: 0 solid transparent  !important;;
   background: #31525B !important;
-  box-shadow: none;
-  padding: 1em;
+  box-shadow: none  !important;;
+  padding: 1em  !important;;
 }
 
 .ui.blue.button, .ui.blue.buttons .button {
@@ -23,24 +23,37 @@
 }
 
 .ui.menu > .grid {
-  width: 100%  !important;
-  position: relative  !important;
-  top: 15px  !important;
+  width: 100% !important;
+  position: relative !important;
+  top: 15px !important;
+}
+
+.item {
+  display: flex !important;
+  opacity: 0.7 !important;
+  font-style: italic !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
 }
 
 .item {
   color: #b2e0df !important;
 }
 
+#root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu > div:nth-child(4) > a > i {
+  /* color: #b2e0df !important; */
+  margin-right: 0.25em !important;
+} 
+
 .ui.segment:first-child {
-  border: 3px solid #31525B;
-  color: #31525B;
+  border: 3px solid #31525B !important;;
+  color: #31525B !important;;
 }
 
 #root > div > div > div > div > div:nth-child(2) > div:nth-child(2) {
-  border: 3px solid #31525B;
-  color: #31525B;
-  margin: 0.5rem 0;
+  border: 3px solid #31525B  !important;;
+  color: #31525B  !important;;
+  margin: 0.5rem 0  !important;;
 }
 
 #root > div > div > div > div > div:nth-child(2) > div.ui.segment.message__form {
