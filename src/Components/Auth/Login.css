@@ -1,0 +1,16 @@
+#root > div > div > h1,
+.ui.icon.header .icon {
+  color: #31525B !important;
+  /* text-shadow: 1px 1px 1px black; */
+}
+
+#root > div > div > form > div > button {
+  background-color: #31525B !important;
+  /* box-shadow: 1px 1px 1px black; */
+}
+
+a {
+  color: #31525B !important;
+  /* text-shadow: 0px 1px 1px black; */
+  font-size: 1.2em;
+}

@@ -11,6 +11,8 @@ import {
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+import "./Login.css";
+
 class Login extends React.Component {
   state = {
     email: "",
@@ -62,7 +64,7 @@ class Login extends React.Component {
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h1" icon color="violet" textAlign="center">
             <Icon name="code branch" color="violet" />
-            Login to BRDG Chat
+            Login to Reel Reviews Chat
           </Header>
           <Form onSubmit={this.handleSubmit} size="large">
             <Segment stacked>

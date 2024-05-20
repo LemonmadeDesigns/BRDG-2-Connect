@@ -10,6 +10,8 @@ import Message from "./Message";
 import Typing from "./Typing";
 import Skeleton from "./Skeleton";
 
+import './Messages.css'
+
 class Messages extends React.Component {
 	state = {
 		privateChannel: this.props.isPrivateChannel,

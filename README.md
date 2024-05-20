@@ -1,4 +1,4 @@
-# BRDG Chat App
+# Reel Reviews Chat App
 
 * `yarn install`
 

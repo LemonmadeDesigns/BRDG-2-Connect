@@ -1,0 +1,49 @@
+.ui[class*="very thin"].left.sidebar, .ui[class*="very thin"].right.sidebar {
+  width: 100px !important;
+}
+
+.ui.inverted.menu {
+  border: 0 solid transparent;
+  background: #31525B !important;
+  box-shadow: none;
+  padding: 1em;
+}
+
+.ui.blue.button, .ui.blue.buttons .button {
+  background-color: #5cbdbb !important;
+  color: #fff;
+  text-shadow: 1px 1px 1px black !important;
+  box-shadow: 1px 1px 1px black !important;
+  margin-bottom: 10px !important;
+}
+
+#root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu {
+  border: 3px solid white !important;
+  height: 100% !important;
+}
+
+.ui.menu > .grid {
+  width: 100%  !important;
+  position: relative  !important;
+  top: 15px  !important;
+}
+
+.item {
+  color: #b2e0df !important;
+}
+
+.ui.segment:first-child {
+  border: 3px solid #31525B;
+  color: #31525B;
+}
+
+#root > div > div > div > div > div:nth-child(2) > div:nth-child(2) {
+  border: 3px solid #31525B;
+  color: #31525B;
+  margin: 0.5rem 0;
+}
+
+#root > div > div > div > div > div:nth-child(2) > div.ui.segment.message__form {
+  border: 3px solid #31525B !important;
+  top: 0% !important;
+}
