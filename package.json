@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "emoji-mart": "^3.0.0",
     "firebase": "^8.7.1",
     "md5": "^2.2.1",
