@@ -5,8 +5,8 @@ html {
 }
 
 .sidebar {
-  position: fixed;
-  left: 0;
+  position: fixed !important;
+  left: 0 !important;
   height: 100vh !important;
 }
 
