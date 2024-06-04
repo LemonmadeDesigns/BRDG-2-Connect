@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "brdg-chat-app-2021"
-  }
+    "default": "brdg-chat-app-2021",
+    "prod": "brdg-chat-app-2021"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

@@ -1,266 +1,113 @@
-html,
-body {
-	background-color: #5cbdbb !important;
+/* Colors */
+body, html {
+  background-color: #5cbdbb !important;
 }
 
 p {
-	align-content: center;
-	/* background-color: #495285; */
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 6em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 6em;
 }
 
 p > span {
-	opacity: 0.4;
-	text-align: center;
+  opacity: 0.4;
+  text-align: center;
 }
 
-/* COLOR PANEL */
-#root
-	> div
-	> div
-	> div
-	> div
-	> div:nth-child(1)
-	> div.ui.inverted.vertical.labeled.icon.ui.left.very.thin.visible.sidebar.menu {
-	color: white;
-	margin-top: 1em;
-}
-
-/* HEAD / NAME */
+/* UI elements */
 .ui.menu > .container,
 .ui.menu > .grid {
-	width: 90%;
+  width: 90%;
 }
 
 .ui.grid {
-	margin-top: -1rem !important;
-	margin-bottom: -1rem !important;
-	margin-left: 0rem !important;
-	margin-right: -1rem !important;
+  margin: 0 !important;
 }
 
-#root
-	> div
-	> div
-	> div
-	> div
-	> div:nth-child(1)
-	> div.ui.large.inverted.vertical.left.fixed.menu {
-	position: relative !important;
-	/* width: 80% !important; */
-	left: 20% !important;
-	height: 100% !important;
-	top: 0% !important;
-}
-
-/* COLUMN 2 */
-.ui.segment:first-child {
-    margin-top: 0px !important;
-}
-
-/* MessageForm.js */
-.message__form {
-	position: fixed !important;
-	bottom: 1em;
-	/* margin-left: 320px !important; */
-	left: 0;
-	right: 1em;
-	z-index: 200;
-}
-
-/* COLUMN 3 */
-#root > div > div > div > div > div:nth-child(3) > div {
-  margin-top: -3px !important;
-}
 
 @media only screen and (min-width: 1200px) {
-	/* GRID CONTAINER */
-	.ui.container {
-		width: 100% !important;
-		margin-left: auto !important;
-		margin-right: auto !important;
-	}
+  /* Grid container */
+  .ui.container {
+    width: 100% !important;
+    margin: auto !important;
+  }
 
-	/* COLUMN 1 */
-	#root
-		> div
-		> div
-		> div
-		> div
-		> div:nth-child(1)
-		> div.ui.large.inverted.vertical.left.fixed.menu {
+  /* Column 1 (Sidebar) */
+  #root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu {
 		position: relative !important;
-		width: 90% !important;
-		left: 10% !important;
-	}
+    width: 80%;
+    left: 20% !important;
+    top: 0;
+  }
 
-	#root
-		> div
-		> div
-		> div
-		> div
-		> div:nth-child(1)
-		> div.ui.large.inverted.vertical.left.fixed.menu
-		> div.ui.grid
-		> div
-		> div
-		> h4 {
-		padding: 0.25em;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-	}
+  #root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu > div.ui.grid > div > div > h4 {
+    padding: 0.25em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-	/* COLUMN 2 */
-	#root > div > div > div > div > div:nth-child(2) > div {
-		position: relative !important;
-	}
+  /* Column 2 (Content) */
+  #root > div > div > div > div > div:nth-child(2) > div {
+    position: relative !important;
+  }
 
-	/* COLUMN 3 */
-	#root > div > div > div > div > div:nth-child(3) > div {
-		margin-left: 0 !important;
-	}
+  /* Column 3 (Metapanel) */
+  #root > div > div > div > div > div:nth-child(3) > div {
+    margin-left: 0 !important;
+  }
 
-	.ui.styled.accordion {
-		width: 100% !important;
-	}
+  .ui.styled.accordion {
+    width: 100% !important;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
-	/* GRID CONTAINER */
-	.ui.container {
-		width: 100% !important;
-		margin-left: auto !important;
-		margin-right: auto !important;
-	}
+  /* Grid container */
+  .ui.container {
+    width: 100% !important;
+    margin: auto !important;
+  }
 
-	/* COLUMN 1 */
-	#root > div > div > div > div > div:nth-child(2) {
-		/* display: none; */
-	}
+  /* Column 1 (Sidebar) */
+  #root > div > div > div > div > div:nth-child(1) {
+    display: flex; /* Show sidebar on tablet */
+    flex-direction: column;
+    margin-top: 2em !important;
+    padding-bottom: 9em !important;
+  }
 
-	#root
-		> div
-		> div
-		> div
-		> div
-		> div:nth-child(1)
-		> div.ui.large.inverted.vertical.left.fixed.menu
-		> div.ui.grid {
-		margin-top: -1rem !important;
-		margin-bottom: -1rem !important;
-		margin-left: 8px !important;
-		margin-right: 4rem !important;
-		width: 97%;
-	}
+  #root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu > div.ui.grid {
+    margin: 0.5em !important;
+    width: 100%;
+  }
 
-	.message__form {
-		position: relative !important;
-		/* top: 1em; */
-		margin-left: 0 !important;
-		left: 0;
-		/* right: 1em; */
-		/* z-index: 200; */
-	}
+  .message__form {
+    position: relative !important;
+    margin-left: 0 !important;
+    width: 100%; /* Span across entire width */
+  }
 
-	/* COLUMN 2 */
-	#root > div > div > div > div > div:nth-child(3) > div {
-		margin-left: 0 !important;
-	}
+  /* Column 2 (Content) */
+  #root > div > div > div > div > div:nth-child(2) > div {
+    margin-left: 0 !important;
+  }
 
-	/* COLUMN 3 */
-	.ui.styled.accordion {
-		width: 100% !important;
-	}
+  /* Column 3 (Metapanel) */
+  #root > div > div > div > div > div:nth-child(3) {
+    margin-left: 0 !important;
+  }
+
+  .ui.styled.accordion {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 767px) {
-	/* SIDEBAR */
-	#root > div > div > div > div > div:nth-child(1) {
-		height: auto !important;
-		margin-top: 2em !important;
-		padding-bottom: 9em !important;
-	}
-
-	.ui.sidebar {
-		position: relative !important;
-		width: 100% !important;
-	}
-
-	/* COLOR PANEL */
-	#root
-		> div
-		> div
-		> div
-		> div
-		> div:nth-child(1)
-		> div.ui.inverted.vertical.labeled.icon.ui.left.very.thin.visible.sidebar.menu {
-		height: 100px !important;
-	}
-
-	/* MENU  */
-	.ui[class*="very thin"].left.sidebar,
-	.ui[class*="very thin"].right.sidebar {
-		color: white;
-	}
-
-	#root
-		> div
-		> div
-		> div
-		> div
-		> div:nth-child(1)
-		> div.ui.large.inverted.vertical.left.fixed.menu {
-		position: relative !important;
-		width: 100% !important;
-		height: 100%;
-		left: 0 !important;
-		top: 1% !important;
-		margin-bottom: 1em !important;
-	}
-
-	.ui.container > .ui.stackable.grid > .column,
-	.ui.container > .ui.stackable.grid > .row > .column {
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
-	}
-
-	.ui.large.vertical.menu {
-		width: auto !important;
-		height: auto !important;
-		margin-bottom: 0.5em;
-	}
-
-	.ui.menu.fixed {
-		position: relative !important;
-	}
-
-	.ui.grid {
-		margin-top: -1rem !important;
-		margin-left: 0 !important;
-
-		width: 100%;
-	}
-
-	/* MESSAGES */
-	#root > div > div > div > div > div:nth-child(2) > div {
-		margin-left: 0 !important;
-	}
-
-	/* MESSAGE FORM */
-	.message__form {
-		position: relative !important;
-		width: 100% !important;
-		margin-left: 0 !important;
-		margin-top: 2em !important;
-	}
-
-	/* METAPANEL */
-	#root > div > div > div > div > div:nth-child(3) {
-		padding-bottom: 2em !important;
+  /* Sidebar */
+  #root > div > div > div > div > div:nth-child(1) {
+    height: auto !
 	}
 }

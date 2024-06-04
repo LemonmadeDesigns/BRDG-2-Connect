@@ -106,7 +106,7 @@ class Login extends React.Component {
           {errors.length > 0 && (
             <Message error>
               <h3>Error</h3>
-              {this.displayErrors(errors)}
+              <p className="error-text">{this.displayErrors(errors)}</p>
             </Message>
           )}
           <Message>
