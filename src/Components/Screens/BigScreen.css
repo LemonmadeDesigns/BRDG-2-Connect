@@ -4,6 +4,12 @@ html {
   background-color: #5cbdbb !important;
 }
 
+.ui.sidebar {
+  position: fixed;
+  left: 0;
+  height: 100vh !important;
+}
+
 p {
   color: #fff;
   display: flex;
