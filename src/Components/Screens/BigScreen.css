@@ -4,7 +4,7 @@ html {
   background-color: #5cbdbb !important;
 }
 
-.ui.sidebar {
+.sidebar {
   position: fixed;
   left: 0;
   height: 100vh !important;
