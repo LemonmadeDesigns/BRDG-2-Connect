@@ -17,15 +17,31 @@ p > span {
 }
 
 /* UI elements */
-.ui.menu > .container,
-.ui.menu > .grid {
-  width: 90%;
-}
-
 .ui.grid {
   margin: 0 !important;
+  width: 90%;
+  position: relative;
+  right: -8em;
 }
 
+.ui.menu {
+  position: relative;
+  z-index: 101;
+  margin: 0 !important;
+  width: 100% !important;
+  border: 2px solid white !important;
+}
+
+.ui.large.vertical.menu {
+  height: 100%;
+  margin: 0 !important;
+  border: 2px solid white !important;
+}
+
+#root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.menu > div.ui.grid {
+  position: relative;
+  left: 0;
+}
 
 @media only screen and (min-width: 1200px) {
   /* Grid container */
@@ -37,16 +53,11 @@ p > span {
   /* Column 1 (Sidebar) */
   #root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu {
 		position: relative !important;
-    width: 80%;
-    left: 20% !important;
-    top: 0;
+    width: 100%;
   }
 
   #root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu > div.ui.grid > div > div > h4 {
     padding: 0.25em;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
   }
 
   /* Column 2 (Content) */
@@ -75,8 +86,6 @@ p > span {
   #root > div > div > div > div > div:nth-child(1) {
     display: flex; /* Show sidebar on tablet */
     flex-direction: column;
-    margin-top: 2em !important;
-    padding-bottom: 9em !important;
   }
 
   #root > div > div > div > div > div:nth-child(1) > div.ui.large.inverted.vertical.left.fixed.menu > div.ui.grid {

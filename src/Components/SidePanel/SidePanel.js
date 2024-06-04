@@ -14,7 +14,7 @@ class SidePanel extends React.Component {
 			<Menu
 				size="large"
 				inverted
-				fixed="left"
+				// fixed="left"
 				vertical
 				style={{ background: primaryColor, fontSize: "1.2rem" }}
 			>
