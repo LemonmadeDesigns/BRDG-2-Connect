@@ -2,6 +2,22 @@
   width: 100px !important;
 }
 
+.ui[class*="right floated"].header {
+  float: none !important;
+  margin: 1em auto 0 !important;
+
+}
+
+.ui.mini.input {
+  float: none !important;
+  margin: 1em auto !important;
+  width: 100% !important;
+}
+
+.ui.input>input {
+  width: 100% !important;
+} 
+
 .ui.inverted.menu {
   border: 0 solid transparent  !important;;
   background: #31525B !important;
