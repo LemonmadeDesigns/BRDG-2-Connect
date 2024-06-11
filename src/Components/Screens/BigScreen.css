@@ -156,7 +156,7 @@ p > span {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 967px) {
 
   .app {
     height: 96vh !important;
