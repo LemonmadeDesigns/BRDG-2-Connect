@@ -27,6 +27,10 @@ p > span {
   text-align: center;
 }
 
+#root > div {
+  width: 100% !important;
+}
+
 /* UI elements */
 .ui.grid {
   margin: 0 !important;

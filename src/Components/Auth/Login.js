@@ -22,7 +22,7 @@ class Login extends React.Component {
   };
 
   displayErrors = errors =>
-    errors.map((error, i) => <p key={i}>{error.message}</p>);
+    errors.map((error, i) => <p className="error-text" key={i}>{error.message}</p>);
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
