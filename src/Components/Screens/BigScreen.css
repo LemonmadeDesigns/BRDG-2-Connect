@@ -39,7 +39,7 @@ p > span {
 .ui.grid > .row {
   position: relative;
   /* left: 7em !important; */
-  width: 90% !important;
+  width: 100% !important;
   padding: 1rem 0;
 }
 
@@ -68,7 +68,7 @@ p > span {
   .ui.grid > .row {
     position: relative;
     left: 7em !important;
-    width: 90% !important;
+    width: 100% !important;
     padding: 1rem 0;
   }
 
@@ -177,6 +177,5 @@ p > span {
     margin: 0 !important;
     width: 100% !important;
     right: 0em !important;
-    /* padding: 2em !important; */
   }
 }
