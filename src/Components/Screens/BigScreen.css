@@ -132,13 +132,21 @@ p > span {
 }
 
 @media (max-width: 767px) {
+
+  html, body, .app {
+    height: 96vh !important;
+  }
+
   /* Sidebar */
-  #root > div > div > div > div > div:nth-child(1) {
-    height: auto !;
+  .sidebar.menu {
+    /* Hide sidebar on mobile */
+    display: none !important; 
   }
 
   .ui.grid {
     margin: 0 !important;
-    width: 75% !important;
+    width: 99% !important;
+    right: 0em !important;
+    padding: 2em !important;
   }
 }
