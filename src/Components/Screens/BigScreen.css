@@ -30,10 +30,17 @@ p > span {
 /* UI elements */
 .ui.grid {
   margin: 0 !important;
-  width: 100% !important;
+  width: 90% !important;
   position: relative !important;
   right: 0em !important;
   /* height: 95.5vh !important; */
+}
+
+.ui.grid > .row {
+  position: relative;
+  /* left: 7em !important; */
+  width: 90% !important;
+  padding: 1rem 0;
 }
 
 .ui.menu {
@@ -57,6 +64,14 @@ p > span {
 
 @media only screen and (min-width: 1200px) {
   /* Grid container */
+
+  .ui.grid > .row {
+    position: relative;
+    left: 7em !important;
+    width: 90% !important;
+    padding: 1rem 0;
+  }
+
   .ui.container {
     width: 100% !important;
     margin: auto !important;
@@ -104,6 +119,11 @@ p > span {
     margin: auto !important;
   }
 
+  .ui.grid > .row {
+    position: relative;
+    left: 8em !important;
+  }
+
   /* Column 1 (Sidebar) */
   #root > div > div > div > div > div:nth-child(1) {
     display: flex; /* Show sidebar on tablet */
@@ -146,6 +166,11 @@ p > span {
   .sidebar.menu {
     /* Hide sidebar on mobile */
     display: none !important; 
+  }
+  
+  .ui.grid > .row {
+    position: relative;
+    left: 0em !important;
   }
 
   .ui.grid {
