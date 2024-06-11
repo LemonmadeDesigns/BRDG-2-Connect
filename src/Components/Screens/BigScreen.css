@@ -4,6 +4,10 @@ html {
   background-color: #5cbdbb !important;
 }
 
+.app {
+  height: 95.5vh !important;
+}
+
 .sidebar {
   position: fixed !important;
   left: 0 !important;
@@ -134,8 +138,8 @@ p > span {
 
 @media (max-width: 767px) {
 
-  html, body, .app {
-    height: 95.5vh !important;
+  .app {
+    height: 96vh !important;
   }
 
   /* Sidebar */
