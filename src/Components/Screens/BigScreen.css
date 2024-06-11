@@ -26,9 +26,10 @@ p > span {
 /* UI elements */
 .ui.grid {
   margin: 0 !important;
-  width: 90%;
-  position: relative;
-  right: -8em;
+  width: 100% !important;
+  position: relative !important;
+  right: 0em !important;
+  height: 95.5vh !important;
 }
 
 .ui.menu {
