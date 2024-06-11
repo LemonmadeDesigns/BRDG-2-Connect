@@ -134,7 +134,7 @@ p > span {
 @media (max-width: 767px) {
 
   html, body, .app {
-    height: 96vh !important;
+    height: 95vh !important;
   }
 
   /* Sidebar */
